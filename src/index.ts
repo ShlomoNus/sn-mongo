@@ -1,1 +1,1 @@
-export { UserRepository } from '@src/repositories/user';
+export { UserRepository } from './repositories/user';
