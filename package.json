@@ -1,5 +1,5 @@
 {
-    "name": "sn-base-lib",
+    "name": "sn-mongo",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
