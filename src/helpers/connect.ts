@@ -1,7 +1,7 @@
 import { AnyType } from 'sn-types-general';
 import { connect } from 'mongoose';
 
-export async function mongodbConnectionWrapper<TArgs = AnyType, TResult = AnyType>({
+export function mongodbConnectionWrapper<TArgs = AnyType, TResult = AnyType>({
     url,
     cb,
 }: {
