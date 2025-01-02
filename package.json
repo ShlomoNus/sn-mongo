@@ -1,5 +1,5 @@
 {
-    "name": "sn-mongo",
+    "name": "sn-mongo-rml",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
