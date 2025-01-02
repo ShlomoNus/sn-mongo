@@ -1,7 +1,19 @@
 {
     "name": "sn-mongo-rml",
     "version": "1.0.1",
-    "main": "index.js",
+    "description": "",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/"
+    ],
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        }
+    },
     "scripts": {
         "prettier": "prettier --check .",
         "prettier-fix": "prettier --write .",
@@ -14,7 +26,6 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "description": "",
     "devDependencies": {
         "eslint": "^9.4.0",
         "eslint-config-prettier": "^9.1.0",
