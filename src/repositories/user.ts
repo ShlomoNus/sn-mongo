@@ -1,19 +1,15 @@
 import { StatusCodes } from 'http-status-codes';
 import { Result } from 'sn-types-general';
-import { join } from 'path';
 import { IUser } from '../types/user';
 import { userModel } from '../models/user';
 import { convertToError, convertType } from '../helpers/types';
 import { mongodbConnectionWrapper } from '../helpers/connect';
 
 class UserRepository {
-    private collectionName = 'users';
-
     private url: string;
 
     constructor({ baseUrl, dbName }: { baseUrl: string; dbName: string }) {
-        console.log('baseUrl', baseUrl, 'dbName', dbName);
-        this.url = join(baseUrl, dbName, this.collectionName);
+        this.url = baseUrl + '/' + dbName;
         console.log(this.url);
     }
 
