@@ -97,15 +97,15 @@ class UserRepository {
         return result;
     }
 
-    get createUser() {
+    get createUserRepo() {
         return mongodbConnectionWrapper({ url: this.url, cb: this.createUserCB.bind(this) });
     }
 
-    get getUser() {
+    get getUserRepo() {
         return mongodbConnectionWrapper({ url: this.url, cb: this.getUserCB.bind(this) });
     }
 
-    get findUser() {
+    get findUserRepo() {
         return mongodbConnectionWrapper({ url: this.url, cb: this.findUserCB.bind(this) });
     }
 }
