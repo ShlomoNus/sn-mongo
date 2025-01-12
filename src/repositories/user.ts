@@ -12,7 +12,9 @@ class UserRepository {
     private url: string;
 
     constructor({ baseUrl, dbName }: { baseUrl: string; dbName: string }) {
+        console.log('baseUrl', baseUrl, 'dbName', dbName);
         this.url = join(baseUrl, dbName, this.collectionName);
+        console.log(this.url);
     }
 
     private async createUserCB(newUser: IUser): Promise<Result<string>> {
