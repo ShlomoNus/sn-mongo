@@ -4,15 +4,18 @@ import { userModel } from '@src/models/user';
 import { IUser } from '@src/types/user';
 import { StatusCodes } from 'http-status-codes';
 import { Result } from 'sn-types-general';
+import { join } from 'path';
 
 class UserRepository {
+    private collectionName = 'users';
+
     private url: string;
 
     constructor({ baseUrl, dbName }: { baseUrl: string; dbName: string }) {
-        this.url = baseUrl + dbName;
+        this.url = join(baseUrl, dbName, this.collectionName);
     }
 
-    private async addUserCB(newUser: IUser): Promise<Result<string>> {
+    private async createUserCB(newUser: IUser): Promise<Result<string>> {
         let result: Result<string>;
 
         try {
@@ -94,8 +97,8 @@ class UserRepository {
         return result;
     }
 
-    get addUser() {
-        return mongodbConnectionWrapper({ url: this.url, cb: this.addUserCB.bind(this) });
+    get createUser() {
+        return mongodbConnectionWrapper({ url: this.url, cb: this.createUserCB.bind(this) });
     }
 
     get getUser() {
