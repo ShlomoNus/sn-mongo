@@ -69,7 +69,7 @@ class UserRepository {
         return result;
     }
 
-    private async findUserCB(user: IUser): Promise<Result<IUser>> {
+    private async findUserCB(user: Omit<IUser, 'password'>): Promise<Result<IUser>> {
         let result: Result<IUser>;
 
         try {
