@@ -10,7 +10,6 @@ class UserRepository {
 
     constructor({ baseUrl, dbName }: { baseUrl: string; dbName: string }) {
         this.url = baseUrl + '/' + dbName;
-        console.log(this.url);
     }
 
     private async createUserCB(newUser: IUser): Promise<Result<string>> {
@@ -19,9 +18,7 @@ class UserRepository {
         try {
             const createdUser = new userModel({ ...newUser });
 
-            const x = await createdUser.save();
-
-            console.log(x);
+            await createdUser.save();
 
             result = {
                 status: true,
