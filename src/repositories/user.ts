@@ -19,7 +19,9 @@ class UserRepository {
         try {
             const createdUser = new userModel({ ...newUser });
 
-            await createdUser.save();
+            const x = await createdUser.save();
+
+            console.log(x);
 
             result = {
                 status: true,
